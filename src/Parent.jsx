@@ -5,15 +5,15 @@ import Card2 from "./Card2";
 import Child from "./Child";
 
 export default function Parent() {
-  const { data } = UseAuth();
-  console.log(data.length);
+  const { data, local } = UseAuth();
+  console.log(data);
   return (
     <>
       <h1>Hello</h1>
       <Child />
       <Card2 />
-      {data.map((item) => (
-        <Card item={item} />
+      {local.map((item) => (
+        <Card key={item.id} item={item} />
       ))}
     </>
   );
